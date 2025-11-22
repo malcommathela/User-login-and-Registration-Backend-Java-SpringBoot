@@ -21,9 +21,10 @@ import static org.springframework.security.config.Customizer.withDefaults;
 @Configuration
 @AllArgsConstructor
 @EnableWebSecurity
-public class WebSecurityConfig extends WebSecurityConfiguration {
+public class WebSecurityConfig{
 
     private final AppUserService appUserService;
+    private final BCryptPasswordEncoder  bCryptPasswordEncoder;
 
 
     @Bean
@@ -41,7 +42,7 @@ public class WebSecurityConfig extends WebSecurityConfiguration {
     @Bean
     public DaoAuthenticationProvider daoAuthenticationProvider() {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider(appUserService);
-        provider.setPasswordEncoder(bCryptPasswordEncoder());
+        provider.setPasswordEncoder(bCryptPasswordEncoder);
         return provider;
     }
 

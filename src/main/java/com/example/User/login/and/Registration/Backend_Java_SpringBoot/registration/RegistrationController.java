@@ -3,6 +3,7 @@ package com.example.User.login.and.Registration.Backend_Java_SpringBoot.registra
 
 import lombok.AllArgsConstructor;
 
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(path = "api/v1/registration")
 @AllArgsConstructor
+@Service
 public class RegistrationController {
 
 
